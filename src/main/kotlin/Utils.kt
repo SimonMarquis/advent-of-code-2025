@@ -17,3 +17,7 @@ fun <T : Comparable<T>> Iterable<T>.maxIndexed(): IndexedValue<T> = foldIndexed(
 }
 
 inline fun <reified T : Enum<T>> T.next(): T = enumValues<T>().run { this[(ordinal + 1) % size] }
+
+fun <E> List<E>.toPair() = first() to second()
+fun <E> List<E>.second() = this[1]
+
